@@ -1,0 +1,18 @@
+
+# Input settings
+input_type: file
+
+input_file: data/input/sample.csv
+
+api_url: https://jsonplaceholder.typicode.com/users
+
+# Output settings
+output_file: data/output/cleaned_data.csv
+
+# Logging
+log_file: logs/pipeline.log
+
+# Cleaning settings
+missing_value_strategy: median
+
+remove_duplicates: true

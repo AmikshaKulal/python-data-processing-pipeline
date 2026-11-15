@@ -1,0 +1,7 @@
+id,name,age,salary,department
+1,Amiksha,21,25000,IT
+2,Rahul,22,30000,HR
+3,Ananya,,28000,IT
+4,John,24,,Finance
+5,Priya,23,35000,HR
+6,Rahul,22,30000,HR

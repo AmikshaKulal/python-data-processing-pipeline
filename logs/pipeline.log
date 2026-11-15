@@ -1,0 +1,93 @@
+2026-11-15 17:03:59,771 - INFO - Pipeline started
+2026-11-15 17:03:59,773 - INFO - Data loaded successfully
+2026-11-15 17:03:59,776 - INFO - Data cleaning completed
+2026-11-15 17:03:59,777 - INFO - Data transformation completed
+2026-11-15 17:03:59,780 - INFO - Output saved successfully
+2026-11-15 17:04:31,878 - INFO - Pipeline started
+2026-11-15 17:04:31,879 - INFO - Data loaded successfully
+2026-11-15 17:04:31,883 - INFO - Data cleaning completed
+2026-11-15 17:04:31,883 - INFO - Data transformation completed
+2026-11-15 17:04:31,885 - INFO - Output saved successfully
+2026-11-15 17:06:02,076 - INFO - Pipeline started
+2026-11-15 17:06:02,077 - INFO - Data loaded successfully
+2026-11-15 17:06:02,080 - INFO - Data cleaning completed
+2026-11-15 17:06:02,083 - INFO - Data transformation completed
+2026-11-15 17:06:02,084 - INFO - Output saved successfully
+2026-11-15 17:11:13,116 - INFO - Pipeline started
+2026-11-15 17:11:13,416 - INFO - API data loaded successfully
+2026-11-15 17:11:13,417 - ERROR - Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\data-processing-pipeline\src\main.py", line 35, in main
+    df = clean_data(df)
+  File "C:\Users\hp\Desktop\data-processing-pipeline\src\cleaner.py", line 7, in clean_data
+    df = df.drop_duplicates()
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\frame.py", line 8908, in drop_duplicates
+    result = self[-self.duplicated(subset, keep=keep)]
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\frame.py", line 9049, in duplicated
+    labels, shape = map(list, zip(*map(f, vals), strict=True))
+                              ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\frame.py", line 9021, in f
+    labels, shape = algorithms.factorize(vals, size_hint=len(self))
+                    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\algorithms.py", line 1008, in factorize
+    codes, uniques = factorize_array(
+                     ~~~~~~~~~~~~~~~^
+        values,
+        ^^^^^^^
+        use_na_sentinel=use_na_sentinel,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        size_hint=size_hint,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\algorithms.py", line 774, in factorize_array
+    uniques, codes = table.factorize(
+                     ~~~~~~~~~~~~~~~^
+        values,
+        ^^^^^^^
+    ...<3 lines>...
+        ignore_na=use_na_sentinel,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7940, in pandas._libs.hashtable.PyObjectHashTable.factorize
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7849, in pandas._libs.hashtable.PyObjectHashTable._unique
+TypeError: unhashable type: 'dict'
+2026-11-15 17:12:09,396 - INFO - Pipeline started
+2026-11-15 17:12:09,644 - INFO - API data loaded successfully
+2026-11-15 17:12:09,652 - INFO - Data cleaning completed
+2026-11-15 17:12:09,652 - ERROR - Pipeline failed
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3816, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 172, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 201, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7726, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7734, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'age'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\Desktop\data-processing-pipeline\src\main.py", line 39, in main
+    df = transform_data(df)
+  File "C:\Users\hp\Desktop\data-processing-pipeline\src\transformer.py", line 7, in transform_data
+    df["age"] = df["age"].astype(int)
+                ~~^^^^^^^
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\frame.py", line 4330, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\hp\Desktop\data-processing-pipeline\venv\Lib\site-packages\pandas\core\indexes\base.py", line 3823, in get_loc
+    raise KeyError(key) from err
+KeyError: 'age'
+2026-11-15 17:13:01,978 - INFO - Pipeline started
+2026-11-15 17:13:02,305 - INFO - API data loaded successfully
+2026-11-15 17:13:02,312 - INFO - Data cleaning completed
+2026-11-15 17:13:02,312 - INFO - Data transformation completed
+2026-11-15 17:13:02,314 - INFO - Output saved successfully
+2026-11-15 17:15:29,328 - INFO - Pipeline started
+2026-11-15 17:15:29,329 - INFO - File data loaded successfully
+2026-11-15 17:15:29,333 - INFO - Data cleaning completed
+2026-11-15 17:15:29,333 - INFO - Data transformation completed
+2026-11-15 17:15:29,335 - INFO - Output saved successfully
